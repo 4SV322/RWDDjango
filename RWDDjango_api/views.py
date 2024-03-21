@@ -9,17 +9,21 @@ from .serializers import (GroupsSerializer,
                           SkillsSerializer,
                           InstitutesSerializer)
 
+
 class GroupListView(APIView):
     def get(self, request, format=None):
         group = Groups.objects.all()
-        serializer = GroupsSerializer(Groups, many=True)
+        serializer = GroupsSerializer(group, many=True)
         return Response(serializer.data)
+
 
 class SkillListView(APIView):
     def get(self, request, format=None):
         skill = Skills.objects.all()
-        serializer = SkillsSerializer(Skills, many=True)
+        serializer = SkillsSerializer(skill, many=True)
         return Response(serializer.data)
+    # def post(self):
+
 
 class InstituteListView(APIView):
     def get(self, request, format=None):

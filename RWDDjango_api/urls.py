@@ -9,3 +9,4 @@ urlpatterns = [
     path('skills/', SkillListView.as_view()),
     path('groups/', GroupListView.as_view())
 ]
+
